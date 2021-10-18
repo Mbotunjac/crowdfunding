@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap');
+
+:root {
+    --background-color: #F2F2F2;
+    --background-inactive-color: hsla(0, 0%, 0%, 1);
+    --inactive-color: #2F2F2F;
+    --text-color: #7A7A7A;
+    --text-color-header: #000000;
+    --wrapper-color: #FFFFFF;
+    --button-color: #3CB3AB;
+    --button-hover-color: #147A73;
+    --buttton-txt-color: #FFFFFF;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--background-color);
+    font-family: 'Commissioner', sans-serif;
+    font-size: 16px;
+}
+
+.hero {
+    background: url("/images/image-hero-desktop.jpg");
+}
