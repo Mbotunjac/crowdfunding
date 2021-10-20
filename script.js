@@ -4,7 +4,7 @@ const MenuToggle ={
     modalWrp: document.querySelector('.modal-wrapper'),
 
     init() {
-        MenuToggle.menuBtn.addEventListener('click', Menu.open);
+        MenuToggle.menuBtn.addEventListener('click', MenuToggle.open);
     },
     open() {
         MenuToggle.menuBtn.classList.toggle('active');
@@ -17,7 +17,7 @@ const MenuToggle ={
         }
         else {
             MenuToggle.menu.classList.add('active');
-            ModalToggle.menu.classList.add('active');
+            ModalToggle.modalWrp.classList.add('active');
         }
     },
     
@@ -46,14 +46,14 @@ const ModalToggle = {
         ModalToggle.modalWrp.classList.remove('active');
     },
     enableOffers(event) {
-        let container= event.target.parentNode.parentNode.parentNode;
-        let offer= container.querySelector('.card-selected');
+        let container = event.target.parentNode.parentNode.parentNode;
+        let offer = container.querySelector('.card-selected');
         if (offer) {
             offer.classList.add('active');
         }
     },
     disableOffers(container) {
-        let offer= container.querySelector('.card-selected');
+        let offer = container.querySelector('.card-selected');
         if (offer) {
             offer.classList.remove('active');
         }
@@ -70,7 +70,52 @@ const ModalToggle = {
     },
 };
 
+const InputManipulation = {
+    inputControll: document.querySelectorAll('input'),
+
+    init() {
+        InputManipulation.inputControll.forEach((input) => {
+            input.addEventListener('change', InputManipulation.selectElement);
+
+        });
+    },
+    selectElement(event) {
+        InputManipulation.clean();
+        ModalToggle.enableOffers(event);
+        let container = event.target.parentNode.parentNode.parentNode;
+        container.style.border = '2px solid #21afa7';
+    },
+    clean() {
+        InputManipulation.inputControll.forEach((input) => {
+            let container = input.parentNode.parentNode.parentNode;
+            ModalToggle.disableOffers(container);
+            container.style.border = '1px solid #aaa';
+        });
+    },
+};
+
+const Buy = {
+    buyBtn: document.querySelectorAll('[data-cart="commiting"'),
+    buyDone: document.querySelector('.confirm'),
+
+    init() {
+        console.log(Buy.buyBtn);
+        Buy.buyBtn.forEach((button) => {
+            button.addEventListener('click', ModalToggle.confirm);
+            let container = button.parentElement;
+        });
+        Buy.buyDone.addEventListener('click', (event) => {
+            ModalToggle.disable();
+            ModalToggle.confirm();
+        }); 
+    },
+
+};
+
+
 
 
 MenuToggle.init();
 ModalToggle.init();
+InputManipulation.init();
+Buy.init();
