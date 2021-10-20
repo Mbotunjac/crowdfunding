@@ -72,8 +72,5 @@ const ModalToggle = {
 
 
 
-
-
-
 MenuToggle.init();
 ModalToggle.init();
