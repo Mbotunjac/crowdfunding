@@ -96,7 +96,7 @@ const InputManipulation = {
 
 const Buy = {
     buyBtn: document.querySelectorAll('[data-cart="commiting"'),
-    buyDone: document.querySelector('.confirm'),
+    buyDone: document.querySelector("#finish"),
 
     init() {
         console.log(Buy.buyBtn);
@@ -104,6 +104,7 @@ const Buy = {
             button.addEventListener('click', ModalToggle.confirm);
             let container = button.parentElement;
         });
+
         Buy.buyDone.addEventListener('click', (event) => {
             ModalToggle.disable();
             ModalToggle.confirm();

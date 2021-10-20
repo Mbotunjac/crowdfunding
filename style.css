@@ -6,7 +6,7 @@
     --inactive-color: #2F2F2F;
     --text-color: #7A7A7A;
     --text-color-header: #000000;
-    --wrapper-color: #FFFFFF;
+    --background-wrapper-color: #FFFFFF;
     --button-color: #3CB3AB;
     --button-hover-color: #147A73;
     --buttton-txt-color: #FFFFFF;
@@ -20,6 +20,13 @@ body {
     font-family: 'Commissioner', sans-serif;
     font-size: 16px;
     box-sizing: border-box;
+    color: var(--text-color);
+}
+
+h1 {
+    font-size: 28px;
+    line-height: 34px;
+    color: var(--text-color-header);
 }
 
 .header {
@@ -40,5 +47,67 @@ body {
 .product img {
     position: relative;
     margin: 0 50%;
-    top: -28px;
+    top: -78px;
 }
+
+.main {
+    max-width: 730px;
+    margin: auto;
+}
+
+section {
+    width: 90%;
+    margin: 1.5rem 5%;
+    background-color: var(--background-wrapper-color);
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: 0.5rem;
+    padding: 3rem 2rem;
+}
+
+.product {
+    width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+    margin-top: -92px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.product-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 1.5rem;
+}
+
+.product-action:active {
+    fill: var(--button-hover-color);
+}
+
+.product-bookmark {
+    position: relative;
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 28px;
+    background-color: hsl(0, 0%, 95%);
+    margin-right: 5%;
+}
+
+.product-bookmark img {
+    position: relative;
+    margin: 0;
+    top: 0;
+}
+
+.bookmark-txt {
+    margin: auto;
+}
+
