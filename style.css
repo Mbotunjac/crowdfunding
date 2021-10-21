@@ -57,11 +57,11 @@ h1 {
 
 section {
     width: 90%;
-    margin: 1.5rem 5%;
+    margin: 5% auto;
     background-color: var(--background-wrapper-color);
     border: 1px solid hsl(0, 0%, 90%);
     border-radius: 0.5rem;
-    padding: 3rem 2rem;
+    padding: 5%;
 }
 
 .product {
@@ -112,13 +112,90 @@ section {
 }
 
 button {
-    font: 500 16px/1 'Commissioner', sans-serif;
+    font: 16px;
     padding: 1.25rem 1rem;
     border: none;
     border-radius: 1.75rem;
     outline: none;
-    background-color: hsl(176, 50%, 47%);
-    color: hsl(0, 0%, 100%);
-    transition: background-color 0.25s ease;
+    background-color: var(--button-color);
+    color: var(--buttton-txt-color);
+    transition: 0.25s ease;
 }
 
+button:hover {
+    background-color: var(--button-hover-color);
+    cursor: pointer;
+}
+
+.headline {
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-color-header);
+    font-weight: 700;
+}
+
+.headlines {
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--text-color-header);
+    font-weight: 700;
+}
+
+.price {
+    font-size: 15px;
+}
+
+.price strong {
+    color: var(--text-color-header);
+}
+
+span {
+    font-size: 15px;
+    color: var(--button-color);
+}
+
+.option-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card-default {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-default-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/*
+.funding-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.funding-info.loading {
+    opacity: 0;
+}
+
+.numbers {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+*/
