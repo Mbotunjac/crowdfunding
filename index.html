@@ -19,10 +19,21 @@
 
   <header class="header">
     <div class="menu">
-        <img src="/images/logo.svg" alt="crowdfunding-logo" id="logo">
+        <img src="/images/logo.svg" alt="crowdfunding-logo" id="logo"/>
+        <svg width="16" height="15" id="openNav" class="navToggle active">
+          <g fill="#FFF" fill-rule="evenodd">
+              <path d="M0 0h16v3H0zM0 6h16v3H0zM0 12h16v3H0z" />
+          </g>
+      </svg>
+      <svg width="14" height="15" id="closeNav" class="navToggle">
+          <g fill="#FFF" fill-rule="evenodd">
+              <path d="M2.404.782l11.314 11.314-2.122 2.122L.282 2.904z" />
+              <path d="M.282 12.096L11.596.782l2.122 2.122L2.404 14.218z" />
+          </g>
+      </svg>
         
         <div class="menu-control" data-menu="menu-control"></div>
-        <nav class="nav-menu">
+        <nav class="nav-menu" id="desktopNav">
             <a href="#">About</a>
             <a href="#">Discover</a>
             <a href="#">Get Started</a>
@@ -40,35 +51,40 @@
 
           <div class="product-actions">
             <button class="option-reward" id="button4">Back this project</button>
-            <span class="product-bookmark">
-              <img src="/images/icon-bookmark.svg" alt="bookmark"/>
-              <p class="bookmark-txt">Bookmark</p>
-            </span>
+            <div id="bookmark">
+              <span class="product-bookmark">
+                <img src="/images/icon-bookmark.svg" alt="bookmark"/>
+                <p class="bookmark-txt">Bookmark</p>
+              </span>
+            </div>
           </div>
         </section>
 
-        <section class="funding-card">
+        <section class="funding-card" id="funding">
           <div class="funding-info">
             
             <div class="numbers">
-              <label>$89,914</label>
+              <label id="total">$89,914</label>
               <p id="dollars" class="numbers-dollars">of $100,000 backed</p>
             </div>
 
             <div class="separator"></div>
 
             <div class="numbers">
-              <label> 5,007</label>
+              <label id="totalBackers"> 5,007</label>
               <p id="backers" class="numbers-backers">total backers</p>
             </div>
 
             <div class="separator"></div>
 
             <div class="numbers">
-              <label>56</label>
+              <label id="daysBacked">56</label>
               <p id="days" class="numbers-days">days left</p>
             </div>
 
+          </div>
+          <div class="progress">
+            <div class="progress-fill"></div>
           </div>
         </section>
 
@@ -138,17 +154,27 @@
 
     <!-- modal -->
 
-    <div class="modal-wrapper"></div>
-      <section class="modal">
+    <div class="modal-wrapper" id="wrapper"></div>
+    <nav id="mobileNav" style="max-height: 0; opacity: 0;">
+      <a href="">About</a>
+      <a href="">Discover</a>
+      <a href="">Get Started</a>
+    </nav>
+      <section class="modal" id="modal">
+     <!--    <div class="modal-close" id="closeModal">
+          <img src="/images/icon-close-modal.svg"/>
+        </div>   ovo mi mozda treba ovde a ne dole-->
 
           <!-- Success modal -->
-        <section class="modal-completed">
-          <img src="/images/icon-check.svg" alt="confirm"/>
-          <p class="thankyou headline">Thanks for your support!</p>
-          <p class="thankyou-info">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
-            an email once our campaign is completed.</p>
-          <button class="confirm" id="finish">Got it!</button>
-          </section>
+        <div class="completed" id="completed">
+          <section class="modal-completed">
+            <img src="/images/icon-check.svg" alt="confirm"/>
+            <p class="thankyou headline">Thanks for your support!</p>
+            <p class="thankyou-info">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get
+              an email once our campaign is completed.</p>
+            <button class="confirm" id="finish">Got it!</button>
+            </section>
+        </div>
 
           <!-- pledge selection --> 
         <div class="modal-default">
@@ -166,7 +192,7 @@
         <section class="card-option">
           <div class="card">
             <div class="card-default-title">
-              <input type="radio" name="chek" id="chek" aria-label="Pledge with no reward"/>
+              <input type="radio" name="chek" id="noReward" aria-label="Pledge with no reward"/>
               <p class="card-title headlines">Pledge with no reward</p>
             </div>
             <p class="card=info">Choose to support us without a reward if you simply believe in our project. As a backer, 
@@ -179,7 +205,7 @@
           <div class="card">
             <div class="card-default">
               <div class="card-default-title">
-                <input type="radio" name="chek" id="chek-basic" aria-label="Bamboo Stand"/>
+                <input type="radio" name="chek" id="basic" aria-label="Bamboo Stand"/>
                 <p class="card-title headlines">Bamboo Stand</p>
                 <span>Pledge $25 or more</span>
               </div>
@@ -207,7 +233,7 @@
           <div class="card">
             <div class="card-default">
               <div class="card-default-title">
-                <input type="radio" name="chek" id="chek-advanced" aria-label="Black Edition Stand"/>
+                <input type="radio" name="chek" id="advanced" aria-label="Black Edition Stand"/>
                 <p class="card-title headlines">Black Edition Stand</p>
                 <span>Pledge $75 or more</span>
               </div>
@@ -235,7 +261,7 @@
           <div class="card">
             <div class="card-default">
               <div class="card-default-title">
-                <input type="radio" name="chek" id="chek-premium" aria-label="Mahogany Special Edition"/>
+                <input type="radio" name="chek" id="premium" aria-label="Mahogany Special Edition"/>
                 <p class="card-title headlines">Mahogany Special Edition</p>
                 <span>Pledge $200 or more</span>
               </div>
