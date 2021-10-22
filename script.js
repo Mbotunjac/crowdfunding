@@ -53,7 +53,7 @@ const clearSelect = () => {
     const currentSelection = document.querySelector(".card-option.active");
     if (currentSelection) {
         const radio = document.querySelector(".card-option .card input");
-        const pledge = document.querySelector(".card-option .amount");
+        const pledge = document.querySelector(".card-option .card-selected");
         const currentInput = document.querySelector(".card-option.active .amount input");
         currentSelection.classList.remove("active");
         radio.checked = false;

@@ -10,6 +10,8 @@
     --button-color: #3CB3AB;
     --button-hover-color: #147A73;
     --buttton-txt-color: #FFFFFF;
+    --error: #FF525D;
+    --txt-color-inactive: #808080;
 }
 
 
@@ -32,6 +34,7 @@ h1 {
 .header {
     background-image: url("/images/image-hero-desktop.jpg");
     background-size: cover;
+    background-position: center;
     max-width: 100%;
     padding: 3rem 7.5% 21rem;
     overflow: hidden;
@@ -219,6 +222,17 @@ input {
     margin-top: 1.5rem;
 }
 
+.progress-fill {
+    transition: 0.86138s ease-out 0s;
+    max-width: 100%;
+    position: relative;
+    left: 0;
+    display: block;
+    height: 1rem;
+    background-color: var(--button-color);
+    border-radius: 0.5rem;
+}
+
 label {
     font-size: 32px;
     line-height: 39px;
@@ -299,7 +313,7 @@ label {
     justify-content: center;
     align-items: center;
     padding: 3rem 1.5rem;
-    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 3rem var(--text-color-header);
     transform: scale(0.95);
 }
 
@@ -324,7 +338,7 @@ label {
 }
 
 .amount input {
-    color: hsl(0, 0%, 0%);
+    color: var(--text-color-header);
     max-width: 100px;
     max-height: 48;
     padding: 1.25rem 1.25rem 1.25rem 2.5rem;
@@ -335,11 +349,11 @@ label {
 }
 
 .amount input:focus {
-    border-color: hsl(0, 0%, 0%);
+    border-color: var(--text-color-header);
 }
 
 .amount input::placeholder {
-    color: hsl(0, 0%, 50%);
+    color: var(--txt-color-inactive);
 }
 
 .amount button {
@@ -348,7 +362,7 @@ label {
 
 
 .amount.error input {
-    border-color: hsl(356, 100%, 66%);
+    border-color: var(--error);
 }
 
 .amount::after {
@@ -357,16 +371,20 @@ label {
     top: 4rem;
     left: 0;
     content: "Please enter a valid pledge";
-    color: hsl(356, 100%, 66%);
+    color: var(--error);
     font-size: 0.75rem;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.25s ease;
 }
 
 .amount.error::after {
     opacity: 1;
 }
+
+.card-option.active .amount::after {
+    transform: scale(1);
+}
+
 
 .close {
     position: relative;
@@ -380,6 +398,21 @@ label {
     fill: var(--text-color-header);
     cursor: pointer;
 }
+
+#wrapper.active{
+    opacity: 1;
+    pointer-events: all;
+}
+    
+#overlay.inactive {
+    pointer-events: none;
+}
+
+section.option.premium {
+    opacity: 0.5;
+}
+
+
 
 
 
