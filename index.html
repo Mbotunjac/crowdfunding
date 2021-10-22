@@ -179,10 +179,10 @@
           <!-- pledge selection --> 
         <div class="modal-default">
           <div class="default-title">
-            <p class="default-name headline">Back this project</p>
             <div class="close" data-menu="close-modal">
               <img src="/images/icon-close-modal.svg" alt="close-modal"/>
             </div>
+            <p class="default-name headline">Back this project</p>
           </div>
         </div>
 
@@ -192,12 +192,23 @@
         <section class="card-option">
           <div class="card">
             <div class="card-default-title">
-              <input type="radio" name="chek" id="noReward" aria-label="Pledge with no reward"/>
+              <input type="radio" name="chek" value="noReward" id="noReward" aria-label="Pledge with no reward"/>
               <p class="card-title headlines">Pledge with no reward</p>
             </div>
             <p class="card=info">Choose to support us without a reward if you simply believe in our project. As a backer, 
               you will be signed up to receive product updates via email.</p>
-          </div>
+
+              <!-- for pledging without reward active -->
+              <div class="card-selected">
+                  <p class="instruction">Enter your pledge</p>
+                  <div class="amount">
+                    <div>
+                      <input type="text" name="pledge" id="option1" placeholder="0.00">
+                  </div>
+                  <button>Continue</button>
+                </div>
+              </div>
+
         </section>
 
         <!-- for pledging 25$ or more --> 
@@ -205,7 +216,7 @@
           <div class="card">
             <div class="card-default">
               <div class="card-default-title">
-                <input type="radio" name="chek" id="basic" aria-label="Bamboo Stand"/>
+                <input type="radio" name="chek" value="basic" id="basic" aria-label="Bamboo Stand"/>
                 <p class="card-title headlines">Bamboo Stand</p>
                 <span>Pledge $25 or more</span>
               </div>
@@ -221,10 +232,12 @@
           <div class="card-selected">
             <p class="instruction">Enter your pledge</p>
             <div class="amount">
-              <p class="price">$<strong>25</strong></p>
-              <button class="commit" data-cart="commiting">Continue</button>
+              <div>
+                <input type="text" name="pledge" id="option2" placeholder="0.00">
             </div>
+            <button>Continue</button>
           </div>
+        </div>
 
         </section>
 
@@ -233,7 +246,7 @@
           <div class="card">
             <div class="card-default">
               <div class="card-default-title">
-                <input type="radio" name="chek" id="advanced" aria-label="Black Edition Stand"/>
+                <input type="radio" name="chek" value="advanced" id="advanced" aria-label="Black Edition Stand"/>
                 <p class="card-title headlines">Black Edition Stand</p>
                 <span>Pledge $75 or more</span>
               </div>
@@ -249,10 +262,12 @@
           <div class="card-selected">
             <p class="instruction">Enter your pledge</p>
             <div class="amount">
-              <p class="price">$<strong>75</strong></p>
-              <button class="commit" data-cart="commiting">Continue</button>
+              <div>
+                <input type="text" name="pledge" id="option3" placeholder="0.00">
             </div>
+            <button>Continue</button>
           </div>
+        </div>
 
         </section>
 
@@ -261,7 +276,7 @@
           <div class="card">
             <div class="card-default">
               <div class="card-default-title">
-                <input type="radio" name="chek" id="premium" aria-label="Mahogany Special Edition"/>
+                <input type="radio" name="chek" value="premium" id="premium" aria-label="Mahogany Special Edition"/>
                 <p class="card-title headlines">Mahogany Special Edition</p>
                 <span>Pledge $200 or more</span>
               </div>
@@ -277,10 +292,12 @@
           <div class="card-selected">
             <p class="instruction">Enter your pledge</p>
             <div class="amount">
-              <p class="price">$<strong>200</strong></p>
-              <button class="commit" data-cart="commiting">Continue</button>
+              <div>
+                <input type="text" name="pledge" id="option4" placeholder="0.00">
             </div>
+            <button>Continue</button>
           </div>
+        </div>
 
         </section>
 

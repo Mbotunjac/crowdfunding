@@ -50,11 +50,11 @@ const resetModal = () => {
 };
 
 const clearSelect = () => {
-    const currentSelection = document.querySelector(".selection.active");
+    const currentSelection = document.querySelector(".card-option.active");
     if (currentSelection) {
-        const radio = document.querySelector(".selection.active .select input");
-        const pledge = document.querySelector(".selection.active .pledge");
-        const currentInput = document.querySelector(".selection.active .pledge input");
+        const radio = document.querySelector(".card-option .card input");
+        const pledge = document.querySelector(".card-option .amount");
+        const currentInput = document.querySelector(".card-option.active .amount input");
         currentSelection.classList.remove("active");
         radio.checked = false;
         pledge.style.maxHeight = 0;
@@ -68,16 +68,16 @@ const clearSelect = () => {
 const selectNew = select => {
     const parentSelection = select.parentElement.parentElement;
     parentSelection.classList.toggle("active");
-    const pledge = document.querySelector(".selection.active .pledge");
+    const pledge = document.querySelector(".card-option.active .amount");
     pledge.style.maxHeight = pledge.scrollHeight + "px";
     select.checked = true;
     setTimeout(() => parentSelection.scrollIntoView({ behavior: "smooth" }), 500);
 };
 
 const updateStock = () => {
-    const selector = document.querySelector(".selection.active .select input").getAttribute("value");;
+    const selector = document.querySelector(".card-option.active .card input").getAttribute("value");;
     const options = document.querySelectorAll(`.option.${selector}`);
-    const stock = document.querySelectorAll(`.option.${selector} h6`)
+    const stock = document.querySelectorAll(`.option.${selector} .price`)
     if (selector !== "noReward") {
         const newStock = Number(stock[0].innerHTML) - 1;
         stock.forEach(s => {
@@ -141,7 +141,7 @@ openButtons.forEach(b => {
     b.addEventListener("click", () => {
         toggleModal();
         toggleOverlay();
-        if (b.classList.contains("specific")) {
+        if (b.classList.contains("option-reward")) {
             const inputID = specificButtons[b.id];
             const checkedOption = document.querySelector(inputID);
             checkedOption.checked = true;
@@ -172,7 +172,7 @@ selects.forEach(select => {
 continueButtons.forEach(b => {
     b.addEventListener("click", event => {
         event.preventDefault();
-        const input = document.querySelector(".selection.active .amount input");
+        const input = document.querySelector(".card-option.active .amount input");
         const inputID = input.id;
         pledge = Number(input.value);
         if (!pledge || pledge < inputConditions[inputID]) {
