@@ -12,6 +12,7 @@
     --buttton-txt-color: #FFFFFF;
     --error: #FF525D;
     --txt-color-inactive: #808080;
+    --amount-border: #E6E6E6;
 }
 
 
@@ -62,7 +63,7 @@ section {
     width: 90%;
     margin: 5% auto;
     background-color: var(--background-wrapper-color);
-    border: 1px solid hsl(0, 0%, 90%);
+    border: 1px solid var(--amount-border);
     border-radius: 0.5rem;
     padding: 5%;
 }
@@ -334,7 +335,7 @@ label {
     top: 20px;
     left: 1.25rem;
     content: "$";
-    color: hsl(0, 0%, 50%);
+    color: var(--txt-color-inactive);
 }
 
 .amount input {
@@ -344,7 +345,7 @@ label {
     padding: 1.25rem 1.25rem 1.25rem 2.5rem;
     outline: none;
     border-radius: 2rem;
-    border: 1px solid hsl(0, 0%, 90%);
+    border: 1px solid #E6E6E6;
     transition: border-color 0.25s ease;
 }
 
@@ -409,6 +410,10 @@ label {
 }
 
 section.option.premium {
+    opacity: 0.5;
+}
+
+section.card-option.premium {
     opacity: 0.5;
 }
 
