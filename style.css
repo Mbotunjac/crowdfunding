@@ -51,7 +51,7 @@ h1 {
 .product img {
     position: relative;
     margin: 0 50%;
-    top: -78px;
+    top: -68px;
 }
 
 .main {
@@ -213,6 +213,16 @@ input {
     text-align: center;
 }
 
+.separator {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    position: relative;
+    border-left: 1px solid rgba(135, 135, 157, 0.25);
+    height: 84px;
+    margin: 0px auto 0px; 
+}
+
 .progress {
     position: relative;
     display: block;
@@ -225,7 +235,7 @@ input {
 
 .progress-fill {
     transition: 0.86138s ease-out 0s;
-    max-width: 100%;
+    max-width: 80%;
     position: relative;
     left: 0;
     display: block;
@@ -416,6 +426,23 @@ section.option.premium {
 section.card-option.premium {
     opacity: 0.5;
 }
+
+
+@media only screen and (min-width: 400px) {
+    .navToggle {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 399px) {
+    nav#desktopNav.nav-menu {
+        display: none;
+    }
+}
+    
+
+
 
 
 

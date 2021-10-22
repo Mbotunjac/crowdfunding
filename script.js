@@ -68,8 +68,8 @@ const clearSelect = () => {
 const selectNew = select => {
     const parentSelection = select.parentElement.parentElement;
     parentSelection.classList.toggle("active");
-    const pledge = document.querySelector(".card-option.active .amount");
-    pledge.style.maxHeight = pledge.scrollHeight + "px";
+ //   const pledge = document.querySelector(".card-option.active .amount");
+ //   pledge.style.maxHeight = pledge.scrollHeight + "px";
     select.checked = true;
     setTimeout(() => parentSelection.scrollIntoView({ behavior: "smooth" }), 500);
 };
