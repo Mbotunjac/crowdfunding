@@ -144,7 +144,7 @@ openButtons.forEach(b => {
         if (b.classList.contains("option-reward")) {
             const inputID = specificButtons[b.id];
             const checkedOption = document.querySelector(inputID);
-            checkedOption.checked = true;
+            
             selectNew(checkedOption);
         };
     });
@@ -177,15 +177,15 @@ continueButtons.forEach(b => {
         pledge = Number(input.value);
         if (!pledge || pledge < inputConditions[inputID]) {
             input.parentElement.parentElement.classList.add("error");
-        } else {
+       } else {
             input.parentElement.parentElement.classList.remove("error");
             updateStock();
             resetModal();
             overlay.classList.toggle("inactive");
-            modal.classList.toggle("active");
-            setTimeout(() => {
-                confirmation.classList.toggle("active");
-            }, 1000);
+           modal.classList.toggle("active");
+           setTimeout(() => {
+               confirmation.classList.toggle("active");
+           }, 1000);
         };
     });
 });
